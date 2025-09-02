@@ -107,7 +107,7 @@ mixin beianInfo()
           +conditionalWrapper(item.icon)
             img.beian-icon(src=url_for(item.icon), alt=item.name)
           span.beian-name= item.name
-
+    
 //- 页脚右侧链接组件
 mixin footerRightLinks()
   +conditionalWrapper(theme.footer.links)
