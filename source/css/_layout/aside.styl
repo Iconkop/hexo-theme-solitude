@@ -67,12 +67,7 @@
     top 0
     content ''
 
-  &:hover
-    .avatar, .sticker
-      transform scale(0)
 
-    .description
-      opacity 1
 
   .sayhi
     width fit-content
@@ -88,15 +83,7 @@
     [data-theme='dark'] &
         background var(--efu-black)
 
-    &:hover
-      background var(--efu-white)
-      color var(--efu-main)
-      transform scale(1.1)
-      transition all .3s
 
-      [data-theme='dark'] &
-        background var(--efu-black)
-        color var(--efu-white)
       
   .avatar
     width 118px
@@ -178,11 +165,7 @@
         display flex
         transition all .3s
 
-        &:hover
-          transform scale(1.1)
-          i
-            color var(--efu-main)
-            background var(--efu-white)
+
 
         i
           background var(--efu-white-op)
