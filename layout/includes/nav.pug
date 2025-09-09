@@ -14,10 +14,15 @@ mixin siteName()
       when 'i_class'
         +icon(theme.site.name.custom, '', { style: 'font-size: 16px;' })
       when 'img'
-        img(src=theme.site.name.custom, alt=config.title)
+        if typeof theme.site.name.custom === 'object' && theme.site.name.custom.light && theme.site.name.custom.dark
+          img.logo-light(src=theme.site.name.custom.light, alt=config.title)
+          img.logo-dark(src=theme.site.name.custom.dark, alt=config.title)
+        else
+          img(src=theme.site.name.custom, alt=config.title)
       when 'text'
         span.title= theme.site.name.custom
     +icon('fas fa-home')
+
 
 nav#nav.show
     #nav-group

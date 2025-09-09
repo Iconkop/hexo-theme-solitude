@@ -384,11 +384,25 @@
         +maxWidth768()
           padding-left 8px
 
-    if hexo-config('site.name.class') == img
+    if hexo-config('site.name.class') == 'img'
       img
-        max-width 120px
-        max-height 35px
-        padding 4px 8px
+        max-width: auto
+        max-height: 100%
+        padding: 4px 8px
+        transition: all 0.3s ease
+
+    .logo-light
+      display: inline-block
+    .logo-dark
+      display: none
+
+    [data-theme="dark"] &
+      .logo-light
+        display: none
+      .logo-dark
+        display: inline-block
+
+
 
   #blog_name
     flex-wrap nowrap
