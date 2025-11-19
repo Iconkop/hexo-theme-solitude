@@ -104,10 +104,15 @@ mixin beianInfo()
           class: 'footer-bar-link',
           title: item.name
         })
-          +conditionalWrapper(item.icon)  /
-            img.beian-icon(src=url_for(item.icon), alt=item.name)
+<<<<<<< HEAD
+          if item.icon
+            +conditionalWrapper(item.icon)
+=======
+          +conditionalWrapper(item.icon)
+            if item.icon
+>>>>>>> 8eb733c625a4ceda08e44cd3d17420ae1232b19c
+              img.beian-icon(src=url_for(item.icon), alt=item.name)
           span.beian-name= item.name
-
 
 //- 页脚右侧链接组件
 mixin footerRightLinks()
