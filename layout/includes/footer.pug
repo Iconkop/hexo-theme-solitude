@@ -104,8 +104,9 @@ mixin beianInfo()
           class: 'footer-bar-link',
           title: item.name
         })
-          +conditionalWrapper(item.icon)  /
-            img.beian-icon(src=url_for(item.icon), alt=item.name)
+          +conditionalWrapper(item.icon)
+            if item.icon
+              img.beian-icon(src=url_for(item.icon), alt=item.name)
           span.beian-name= item.name
 
 
