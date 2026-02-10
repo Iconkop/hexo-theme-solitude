@@ -135,7 +135,17 @@ mixin footerBar()
       .footer-bar-left
         +copyrightInfo()
         +beianInfo()
+
+        //- 👇 自定义代码区（来自 YAML: footer.code[]）
+        +conditionalWrapper(theme.footer.code)
+          .footer-custom-code
+            each line in theme.footer.code
+              .footer-custom-html
+                //- 保证 line 是字符串，直接渲染 HTML
+                != typeof line === 'string' ? line : ''
+      
       +footerRightLinks()
+
 
 //- 评论弹幕组件
 mixin commentBarrage()

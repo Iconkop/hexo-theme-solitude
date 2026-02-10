@@ -15,7 +15,6 @@
     content ''
     z-index -1
 
-
   if hexo-config('post.footer.enable')
     div#st-footer-bar
       display flex
@@ -200,6 +199,7 @@
 
         .footer-bar-link
           margin 0
+
       .beian-group
         display flex
         gap 8px
@@ -225,7 +225,20 @@
           display flex
           align-items center
           gap 4px
-        
+
+      // 👇 自定义代码区
+      .footer-custom-code
+        display flex
+        flex-direction column
+        gap 4px
+
+      .footer-custom-html
+        font-size 12px
+        font-weight 400
+        color var(--efu-secondtext)
+        display flex
+        align-items center
+        gap 4px
 
     .footer-bar-link
       margin 0 4px
@@ -264,3 +277,20 @@
 
     > div > div.footer-bar-left > span
       margin-right 1rem
+
+// PC端横排自定义代码
+@media (min-width: 769px)
+  #footer .footer-bar-left
+    flex-direction row
+    align-items center
+
+  #footer .footer-bar-left .beian-group
+    display flex
+    flex-direction row
+    align-items center
+    gap 8px
+
+  #footer .footer-bar-left .footer-custom-code
+    flex-direction row
+    margin-left 8px
+    gap 8px
