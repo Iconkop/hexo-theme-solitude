@@ -188,14 +188,19 @@
     .footer-bar-left
       display flex
       gap 8px
-      flex-direction column
+      flex-direction row
+      flex-wrap wrap
+      align-items center
       +maxWidth768()
+        flex-direction column
         align-items center
 
       .copyright
         display flex
         flex-direction row
         align-items center
+        +maxWidth768()
+          justify-content center
 
         .footer-bar-link
           margin 0
@@ -204,8 +209,17 @@
         display flex
         gap 8px
         flex-wrap wrap
+        align-items center
         +maxWidth768()
           justify-content center
+
+        > div
+          display flex
+          flex-wrap wrap
+          align-items center
+          gap 8px
+          +maxWidth768()
+            justify-content center
 
         a:hover
           background 0 0
@@ -225,6 +239,13 @@
           display flex
           align-items center
           gap 4px
+
+      // 👇 自定义代码区包裹层
+      > div:last-child
+        display flex
+        +maxWidth768()
+          justify-content center
+          width 100%
 
       // 👇 自定义代码区
       .footer-custom-code
@@ -280,17 +301,7 @@
 
 // PC端横排自定义代码
 @media (min-width: 769px)
-  #footer .footer-bar-left
+  #footer-bar .footer-bar-left .footer-custom-code
     flex-direction row
-    align-items center
-
-  #footer .footer-bar-left .beian-group
-    display flex
-    flex-direction row
-    align-items center
-    gap 8px
-
-  #footer .footer-bar-left .footer-custom-code
-    flex-direction row
-    margin-left 8px
+    margin-left 0
     gap 8px
